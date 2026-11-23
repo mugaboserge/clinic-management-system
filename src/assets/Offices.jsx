@@ -5,7 +5,8 @@ function Offices() {
     const [offices, setOffices] = useState([]);
     const [search, setSearch] = useState("");
 
-    // Get offices from Spring Boot
+    // CONNECT TO OUR DB CLINIC-DB
+
     const fetchOffices = () => {
         axios.get("http://localhost:8082/api/offices")
             .then(response => {
@@ -20,13 +21,13 @@ function Offices() {
         fetchOffices();
     }, []);
 
-    // Search offices
+ // SEARCH
     const filteredOffices = offices.filter(office =>
         office.name.toLowerCase().includes(search.toLowerCase()) ||
         office.officeNumber.toString().includes(search)
     );
 
-    // Delete office
+// DELETE
     const deleteOffice = (id) => {
         if (window.confirm("Are you sure you want to delete this office?")) {
             axios.delete(`http://localhost:8082/api/offices/${id}`)
@@ -40,7 +41,7 @@ function Offices() {
         }
     };
 
-    // Update office
+ // UPDATE
     const updateOffice = (office) => {
         const newName = prompt("Enter new office name:", office.name);
         const newOfficeNumber = prompt(
