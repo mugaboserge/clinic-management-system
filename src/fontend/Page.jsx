@@ -1,6 +1,5 @@
-import LibraryButton from "./LibraryButton";
 
-function HomePage() {
+function Page() {
     return (
         <section id="home">
 
@@ -23,4 +22,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default Page;

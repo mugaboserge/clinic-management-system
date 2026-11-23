@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-function Office() {
+function Doctors() {
 
     const [officeName, setOfficeName] = useState("");
     const [officeNumber, setOfficeNumber] = useState("");
@@ -58,4 +58,4 @@ function Office() {
     );
 }
 
-export default Office;
+export default Doctors;
